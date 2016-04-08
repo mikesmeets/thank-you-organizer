@@ -1,0 +1,28 @@
+<Template name="ThankYou">
+    <div class="thank-you {{ tyClass }}">
+        <h2>{{ giver }}</h2>
+        <h3>{{ gift }}</h3>
+        <form>
+            <textarea name="updateText" rows="10">{{ thanksText }}</textarea>
+            <div class="button-row">
+                <button class="btn btn-default update-draft">
+                    Update Draft
+                </button>
+                {{#if written }}
+                    <button class="btn disabled">
+                        Written!
+                    </button>
+                {{else}}{{#if finalized }}
+                        <button class="btn btn-default update-write">
+                            Write
+                        </button>
+                    {{else}}
+                        <button class="btn btn-default update-final">
+                            Finalize
+                        </button>
+                    {{/if}}
+                {{/if}}
+            </div>
+        </form>
+    </div>
+</Template>
